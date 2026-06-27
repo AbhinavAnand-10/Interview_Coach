@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ─────────────────────────────────────────────────────── */
+:root {
+  --bg-base:      #f1f5f9;
+  --bg-card:      #ffffff;
+  --bg-subtle:    #f8fafc;
+  --border:       #e2e8f0;
+  --text-primary: #0f172a;
+  --text-muted:   #64748b;
+}
+
+.dark {
+  --bg-base:      #020617;
+  --bg-card:      #0f172a;
+  --bg-subtle:    #1e293b;
+  --border:       #1e293b;
+  --text-primary: #f8fafc;
+  --text-muted:   #94a3b8;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────── */
+@layer base {
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    transition: color 0.15s ease;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ── Utility classes ───────────────────────────────────────────────────── */
+@layer utilities {
+  .bg-base      { background-color: var(--bg-base); }
+  .bg-card      { background-color: var(--bg-card); }
+  .bg-subtle    { background-color: var(--bg-subtle); }
+  .text-muted   { color: var(--text-muted); }
+  .border-default { border-color: var(--border); }
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Light mode card shadow ────────────────────────────────────────────── */
+:root .bg-card,
+:root .rounded-2xl {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.dark .bg-card,
+.dark .rounded-2xl {
+  box-shadow: none;
+}

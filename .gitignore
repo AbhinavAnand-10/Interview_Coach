@@ -1,0 +1,14 @@
+# Python
+interview-coach-backend/.venv/
+interview-coach-backend/__pycache__/
+interview-coach-backend/**/__pycache__/
+interview-coach-backend/.env
+
+# Node
+interview-coach-frontend/node_modules/
+interview-coach-frontend/.next/
+interview-coach-frontend/.env.local
+
+# General
+.DS_Store
+*.pyc
